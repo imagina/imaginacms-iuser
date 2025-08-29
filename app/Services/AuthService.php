@@ -55,7 +55,7 @@ class AuthService
     ];
   }
 
-  public function getUserData($criteria, $field = 'id'): User
+  public function getUserData($criteria, $field = 'id'): User | null
   {
     $repository = app('Modules\Iuser\Repositories\UserRepository');
     //Get user by email
