@@ -137,7 +137,7 @@ class User extends Authenticatable implements OAuthenticatable
           //Information to each permission
           foreach ($permission as $permissionType => $infoPermission) {
             //Check if permission is true
-            $resultValidate = $this->validatePermission($infoPermission);
+            $resultValidate = $this->validatePermission($infoPermission, "$permissionEntity.$permissionType");
             if ($resultValidate) {
               $permissions[$permissionEntity . '.' . $permissionType] = true;
             }
