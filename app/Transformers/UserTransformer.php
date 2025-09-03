@@ -21,7 +21,8 @@ class UserTransformer extends CoreResource
   {
     $attributes = [
       'files' => $this->whenLoaded('files', fn() => $this->files->byZones($this->mediaFillable, $this)),
-      'fields' => $this->whenLoaded('fields', function () {
+      // TODO: Pendiente el update en el ifillable
+      /*'fields' => $this->whenLoaded('fields', function () {
         $translations = [];
         $currentLocale = app()->getLocale();
 
@@ -46,7 +47,7 @@ class UserTransformer extends CoreResource
 
         // devolvemos el merge de campos y traducciones
         return array_merge($attributes, $translations);
-      }),
+      }),*/
     ];
 
     return $attributes;
