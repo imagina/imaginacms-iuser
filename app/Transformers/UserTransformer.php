@@ -13,41 +13,42 @@ class UserTransformer extends CoreResource
   protected array $excludeRelations = ['fields'];
 
   /**
-  * Method to merge values with response
-  *
-  * @return array
-  */
-  public function modelAttributes($request):array
+   * Method to merge values with response
+   *
+   * @return array
+   */
+  public function modelAttributes($request): array
   {
-      $attributes = [
-        'files' => $this->whenLoaded('files', fn() => $this->files->byZones($this->mediaFillable, $this))
-      ];
+    $attributes = [
+      'files' => $this->whenLoaded('files', fn() => $this->files->byZones($this->mediaFillable, $this)),
+      'fields' => $this->whenLoaded('fields', function () {
+        $translations = [];
+        $currentLocale = app()->getLocale();
 
-      if ($this->resource->relationLoaded('fields')) {
-          $translations = [];
-          $currentLocale = app()->getLocale();
+        foreach ($this->fields as $field) {
+          $isMultilang = false;
+          $fieldTitle = $field->title;
 
-          foreach ($this->resource->fields as $field) {
-              $isMultilang = false;
-              $fieldTitle = $field->title;
-
-              foreach ($field->getAttributes() as $locale => $data) {
-                  if (is_array($data) && isset($data['value'])) {
-                      $translations[$locale][$fieldTitle] = $data['value'];
-                      $isMultilang = true;
-                  }
-              }
-
-              if ($isMultilang) {
-                  $attributes[$fieldTitle] = $translations[$currentLocale][$fieldTitle] ?? null;
-              } else {
-                  $attributes[$fieldTitle] = $field->value;
-              }
+          foreach ($field->getAttributes() as $locale => $data) {
+            if (is_array($data) && isset($data['value'])) {
+              $translations[$locale][$fieldTitle] = $data['value'];
+              $isMultilang = true;
+            }
           }
 
-          $attributes = array_merge($attributes, $translations);
-      }
+          if ($isMultilang) {
+            $attributes[$fieldTitle] =
+              $translations[$currentLocale][$fieldTitle] ?? null;
+          } else {
+            $attributes[$fieldTitle] = $field->value;
+          }
+        }
 
-      return $attributes;
+        // devolvemos el merge de campos y traducciones
+        return array_merge($attributes, $translations);
+      }),
+    ];
+
+    return $attributes;
   }
 }
