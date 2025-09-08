@@ -5,7 +5,7 @@ return [
   'registerUsers' => [
     'name' => 'iuser::registerUsers',
     'default' => '1',
-    'dynamicFiled' => [
+    'dynamicField' => [
       'type' => 'checkbox',
       'props' => [
         'trueValue' => '1',
@@ -18,7 +18,7 @@ return [
   'validateRegisterWithEmail' => [
     'name' => 'iuser::validateRegisterWithEmail',
     'default' => '0',
-    'dynamicFiled' => [
+    'dynamicField' => [
       'type' => 'checkbox',
       'props' => [
         'trueValue' => '1',
@@ -31,7 +31,7 @@ return [
   'adminNeedsToActivateNewUsers' => [
     'name' => 'iuser::adminNeedsToActivateNewUsers',
     'default' => '0',
-    'dynamicFiled' => [
+    'dynamicField' => [
       'type' => 'checkbox',
       'props' => [
         'trueValue' => '1',
@@ -44,7 +44,7 @@ return [
   'allowResetPassword' => [
     'name' => 'iuser::allowResetPassword',
     'default' => '1',
-    'dynamicFiled' => [
+    'dynamicField' => [
       'type' => 'checkbox',
       'props' => [
         'trueValue' => '1',
@@ -57,7 +57,7 @@ return [
   'registerUsersWithSocialNetworks' => [
     'name' => 'iuser::registerUsersWithSocialNetworks',
     'default' => '0',
-    'dynamicFiled' => [
+    'dynamicField' => [
       'type' => 'checkbox',
       'props' => [
         'trueValue' => '1',
@@ -70,7 +70,7 @@ return [
   'registerUserWithPoliticsOfPrivacy' => [
     'name' => 'iuser::registerUserWithPoliticsOfPrivacy',
     'default' => null,
-    'dynamicFiled' => [
+    'dynamicField' => [
       'type' => 'input',
       'props' => [
         'label' => 'iuser::settings.registerUserWithPoliticsOfPrivacy',
@@ -82,7 +82,7 @@ return [
   'registerUserWithTermsAndConditions' => [
     'name' => 'iuser::registerUserWithTermsAndConditions',
     'default' => null,
-    'dynamicFiled' => [
+    'dynamicField' => [
       'type' => 'input',
       'props' => [
         'label' => 'iuser::settings.registerUserWithTermsAndConditions',
@@ -94,7 +94,7 @@ return [
   'logoutIdlTime' => [
     'name' => 'iuser::logoutIdlTime',
     'default' => '0',
-    'dynamicFiled' => [
+    'dynamicField' => [
       'type' => 'input',
       'help' => [
         'description' => 'iuser::settings.logoutIdlTime.helpText',
@@ -111,7 +111,7 @@ return [
     'default' => (object)['iuser::authBanner' => null],
     'name' => 'medias_single',
     'isMedia' => 'media_single',
-    'dynamicFiled' => [
+    'dynamicField' => [
       'fakeFieldName' => 'iuser::authBanner',
       'type' => 'media',
       'groupName' => 'register',
@@ -130,7 +130,7 @@ return [
     'name' => 'iuser::authTitle',
     'default' => null,
     'isTranslatable' => true,
-    'dynamicFiled' => [
+    'dynamicField' => [
       'type' => 'input',
       'groupName' => 'register',
       'groupTitle' => 'iuser::settings.settingGroups.auth',
@@ -144,7 +144,7 @@ return [
   'hideLogo' => [
     'name' => 'iuser::hideLogo',
     'default' => '0',
-    'dynamicFiled' => [
+    'dynamicField' => [
       'type' => 'select',
       'groupName' => 'register',
       'groupTitle' => 'iuser::settings.settingGroups.auth',
@@ -162,7 +162,7 @@ return [
     'name' => 'iuser::authLoginCaption',
     'default' => null,
     'isTranslatable' => true,
-    'dynamicFiled' => [
+    'dynamicField' => [
       'type' => 'input',
       'groupName' => 'register',
       'groupTitle' => 'iuser::settings.settingGroups.auth',
@@ -177,7 +177,7 @@ return [
     'name' => 'iuser::authRegisterCaption',
     'default' => null,
     'isTranslatable' => true,
-    'dynamicFiled' => [
+    'dynamicField' => [
       'type' => 'input',
       'groupName' => 'register',
       'groupTitle' => 'iuser::settings.settingGroups.auth',
@@ -191,7 +191,7 @@ return [
   'rolesToRegister' => [
     'name' => 'iuser::rolesToRegister',
     'default' => [2],
-    'dynamicFiled' => [
+    'dynamicField' => [
       'type' => 'select',
       'groupName' => 'register',
       'groupTitle' => 'iuser::settings.settingGroups.auth',
@@ -210,7 +210,7 @@ return [
   'rolesToRegisterInWizard' => [
     'name' => 'iuser::rolesToRegisterInWizard',
     'default' => [2],
-    'dynamicFiled' => [
+    'dynamicField' => [
       'type' => 'select',
       'groupName' => 'register',
       'groupTitle' => 'iuser::settings.settingGroups.auth',
@@ -229,7 +229,7 @@ return [
   'passwordExpiredTime' => [
     'name' => 'iuser::passwordExpiredTime',
     'default' => '0',
-    'dynamicFiled' => [
+    'dynamicField' => [
       'type' => 'select',
       'groupName' => 'register',
       'groupTitle' => 'iuser::settings.settingGroups.auth',
@@ -249,7 +249,7 @@ return [
   'notAllowOldPassword' => [
     'name' => 'iuser::notAllowOldPassword',
     'default' => '1',
-    'dynamicFiled' => [
+    'dynamicField' => [
       'type' => 'checkbox',
       'groupName' => 'register',
       'groupTitle' => 'iuser::settings.settingGroups.auth',
@@ -264,7 +264,7 @@ return [
   'allowLocalLogin' => [
     'name' => 'iuser::allowLocalLogin',
     'default' => "1",
-    'dynamicFiled' => [
+    'dynamicField' => [
       'type' => 'checkbox',
       'props' => [
         'trueValue' => "1",
@@ -276,7 +276,7 @@ return [
   'customLogin' => [
     'name' => 'iuser::customLogin',
     'default' => ['email'],
-    'dynamicFiled' => [
+    'dynamicField' => [
       'type' => 'select',
       'props' => [
         'label' => 'iuser::settings.labelCustomLogin',
@@ -294,7 +294,7 @@ return [
   'microsoftClientId' => [
     'default' => "",
     'name' => 'iuser::microsoftClientId',
-    'dynamicFiled' => [
+    'dynamicField' => [
       'type' => 'input',
       'groupName' => 'microsoft',
       'groupTitle' => 'isite::cms.label.microsoft',
@@ -306,7 +306,7 @@ return [
   'microsoftAuthUrl' => [
     'default' => "",
     'name' => 'iuser::microsoftAuthUrl',
-    'dynamicFiled' => [
+    'dynamicField' => [
       'type' => 'input',
       'groupName' => 'microsoft',
       'groupTitle' => 'isite::cms.label.microsoft',
@@ -318,7 +318,7 @@ return [
   'microsoftScopeLogin' => [
     'default' => [],
     'name' => 'iuser::microsoftScopeLogin',
-    'dynamicFiled' => [
+    'dynamicField' => [
       'type' => 'select',
       'groupName' => 'microsoft',
       'groupTitle' => 'isite::cms.label.microsoft',
@@ -335,7 +335,7 @@ return [
   'layoutProfileShow' => [
     'name' => 'iuser::layoutProfileShow',
     'default' => "iuser::frontend.profile.layouts.profile-layout-1.index",
-    'dynamicFiled' => [
+    'dynamicField' => [
       'type' => 'select',
       'groupName' => 'layouts',
       'groupTitle' => 'iuser::common.layouts.group_name',
@@ -354,7 +354,7 @@ return [
   'notifyUserOnCreation' => [
     'name' => 'iuser::notifyUserOnCreation',
     'default' => '0',
-    'dynamicFiled' => [
+    'dynamicField' => [
       'type' => 'checkbox',
       'props' => [
         'trueValue' => '1',
