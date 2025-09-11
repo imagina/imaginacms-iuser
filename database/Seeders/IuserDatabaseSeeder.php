@@ -7,12 +7,12 @@ use Illuminate\Database\Seeder;
 class IuserDatabaseSeeder extends Seeder
 {
 
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
-    {
-
-        $this->call(CreateRolesSeeder::class);
-    }
+  /**
+   * Run the database seeds.
+   */
+  public function run(): void
+  {
+    $this->call(CreateRolesSeeder::class);
+    $this->call(FormUserRegister::class);
+  }
 }
