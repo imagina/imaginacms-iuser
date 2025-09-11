@@ -29,7 +29,7 @@ Route::prefix('/iuser/v1')->group(function () {
         'prefix' => 'roles',
         'controller' => RoleApiController::class,
         'permission' => 'iuser.roles',
-        //'middleware' => ['create' => [], 'index' => [], 'show' => [], 'update' => [], 'delete' => [], 'restore' => []],
+        'middleware' => ['index' => [], 'show' => []],
         // 'customRoutes' => [ // Include custom routes if needed
         //  [
         //    'method' => 'post', // get,post,put....
@@ -61,7 +61,7 @@ Route::prefix('/iuser/v1')->group(function () {
         //Logout
         Route::post('/logout', [Modules\Iuser\Http\Controllers\Api\AuthApiController::class, 'logout'])
             ->name($locale . '.api.iuser.auth.logout')
-            ->middleware('auth:api');
+            ->middleware('auth-can');
 
         //Reset Process
         Route::post('/reset', [Modules\Iuser\Http\Controllers\Api\AuthApiController::class, 'reset'])
