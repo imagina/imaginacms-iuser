@@ -1,18 +1,15 @@
 <?php
 
 return [
-    'title' => [
-    ],
-    'button' => [
-    ],
-    'table' => [
-    ],
-    'form' => [
-    ],
+    'title' => [],
+    'button' => [],
+    'table' => [],
+    'form' => [],
     'messages' => [
         'unavailableUserName' => 'El email ya está registrado.',
     ],
-    'validation' => [
-    ],
+    'validation' => [],
+    'fields' => [
+        'age' => 'Edad'
+    ]
 ];
-
