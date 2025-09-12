@@ -61,7 +61,7 @@ class AuthService
     //Get user by email
     $params = json_decode(json_encode([
       "filter" => ["field" => $field],
-      "include" => ["roles.translations", "files"]
+      "include" => ["roles.translations", "files", "fields"]
     ]));
     $user = $repository->getItem($criteria, $params);
     if($user) $user->makeVisible('permissions');
