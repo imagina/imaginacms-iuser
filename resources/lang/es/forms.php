@@ -9,6 +9,7 @@ return [
       'birthday' => 'Fecha de nacimiento',
       'lastName' => 'Apellidos',
       'firstName' => 'Nombre',
+      'telephone' => 'Telefono',
     ]
   ]
 ];

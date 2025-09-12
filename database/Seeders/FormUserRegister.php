@@ -119,6 +119,21 @@ class FormUserRegister extends Seeder
           'system_name' => 'document_number',
           'required' => true,
         ]);
+
+        $fieldRepository->create([
+          'form_id' => $form->id,
+          'block_id' => $block->id,
+          'es' => [
+            'label' => itrans('iuser::forms.userRegister.fields.telephone', [], 'es'),
+          ],
+          'en' => [
+            'label' => itrans('iuser::forms.userRegister.fields.telephone', [], 'en'),
+          ],
+          'type_id' => 10,
+          'system_name' => 'telephone',
+          'required' => false,
+        ]);
+
       }
 
       $role = $roleRepository->getItem('user', json_decode(json_encode($params)));
