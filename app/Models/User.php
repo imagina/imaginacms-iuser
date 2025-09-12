@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Modules\Iuser\Traits\RolePermissionTrait;
 use Nwidart\Modules\Facades\Module;
 use Illuminate\Support\Facades\Log;
+use Carbon\Carbon;
 
 class User extends Authenticatable implements OAuthenticatable
 {
@@ -114,6 +115,25 @@ class User extends Authenticatable implements OAuthenticatable
   protected function fullName(): Attribute
   {
     return Attribute::get(fn () => trim("{$this->first_name} {$this->last_name}"));
+  }
+
+  /**
+   * Get the user's age.
+   */
+  public function age(): Attribute
+  {
+    return Attribute::get(function () {
+      $birthField = $this->fields->first(fn($field) => $field->title === 'birthday');
+      if (!$birthField || empty($birthField->value)) {
+        return null;
+      }
+      try {
+        $birthDate = Carbon::parse($birthField->value);
+        return $birthDate->age;
+      } catch (\Exception $e) {
+        return null;
+      }
+    });
   }
 
   /**
