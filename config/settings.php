@@ -332,24 +332,6 @@ return [
       ],
     ]
   ],
-  'layoutProfileShow' => [
-    'name' => 'iuser::layoutProfileShow',
-    'default' => "iuser::frontend.profile.layouts.profile-layout-1.index",
-    'dynamicField' => [
-      'type' => 'select',
-      'groupName' => 'layouts',
-      'groupTitle' => 'iuser::common.layouts.group_name',
-      'loadOptions' => [
-        'apiRoute' => '/isite/v1/layouts',
-        'select' => ['label' => 'title', 'id' => 'path'],
-        'requestParams' => ['filter' => ['entity_name' => 'User', 'module_name' => 'Iprofile', 'isInternal' => 1]],
-      ],
-      'props' => [
-        'label' => 'iuser::common.layouts.label_views',
-        'entityId' => null,
-      ],
-    ]
-  ],
   //Register Users
   'notifyUserOnCreation' => [
     'name' => 'iuser::notifyUserOnCreation',
