@@ -109,4 +109,11 @@ class EloquentUserRepository extends EloquentCoreRepository implements UserRepos
         //Response
         return $model;
     }
+
+    protected function beforeCreate(array &$data): void
+    {
+        //Validation to active user default
+        $adminActiveUsers = setting('iuser::adminNeedsToActivateNewUsers');
+        $data['is_enable'] = !$adminActiveUsers ? 1 : 0;
+    }
 }

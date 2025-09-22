@@ -58,7 +58,8 @@ class User extends Authenticatable implements OAuthenticatable
     'permissions',
     'first_name',
     'last_name',
-    'is_guest'
+    'is_guest',
+    'is_enable'
   ];
 
   public array $modelRelations = [
@@ -114,7 +115,7 @@ class User extends Authenticatable implements OAuthenticatable
    */
   protected function fullName(): Attribute
   {
-    return Attribute::get(fn () => trim("{$this->first_name} {$this->last_name}"));
+    return Attribute::get(fn() => trim("{$this->first_name} {$this->last_name}"));
   }
 
   /**
