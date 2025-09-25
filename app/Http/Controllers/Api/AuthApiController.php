@@ -156,7 +156,8 @@ class AuthApiController extends CoreApiController
         $message = itrans('iuser::users.password-reset.status.sent');
       } else {
         //status = passwords.throttled
-        $message =  itrans('iuser::users.password-reset.status.throttled');;
+        $throttleSeconds = config('auth.passwords.users.throttle', 60);
+        $message =  itrans('iuser::users.password-reset.status.throttled', ['seconds' => $throttleSeconds]);
       }
 
       $response = ['data' => $message];
