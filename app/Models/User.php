@@ -191,10 +191,21 @@ class User extends Authenticatable implements OAuthenticatable
   public function sendPasswordResetNotification($token): void
   {
 
-    $url = env('APP_URL') . "/reset-password?token=" . $token;
-    Log::info("Iuser::User||Token: " . $token);
+    //Data from request
+    $email = request()->input('attributes.email');
+    $completeResetUrl = request()->input('attributes.completeResetUrl');
 
-    //$this->notify(new ResetPasswordNotification($url));
+    //set data final
+    $finalUrl = $completeResetUrl . '?token=' . $token;
+    $message = itrans('iuser::emails.resetPassword.message', ['url' => $finalUrl]);
+
+    //Sent Email
+    $notificationDispatch = app('Modules\Inotification\Services\NotificationDispatcherService');
+    $notificationDispatch->execute([
+      'title' => itrans('iuser::emails.resetPassword.title'),
+      'message' => $message,
+      'email' => $email,
+    ]);
   }
 
   public function fields()

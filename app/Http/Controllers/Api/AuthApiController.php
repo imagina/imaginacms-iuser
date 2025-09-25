@@ -150,13 +150,13 @@ class AuthApiController extends CoreApiController
       //Process reset password
       $result = Password::sendResetLink(['email' => $data['email']]);
 
-      //TODO: Traducciones
+
       if ($result === Password::ResetLinkSent) {
         //status = passwords.sent
-        $message = "We have emailed your password reset link";
+        $message = itrans('iuser::users.password-reset.status.sent');
       } else {
         //status = passwords.throttled
-        $message = "Please wait before retrying";
+        $message =  itrans('iuser::users.password-reset.status.throttled');;
       }
 
       $response = ['data' => $message];
@@ -191,13 +191,13 @@ class AuthApiController extends CoreApiController
         }
       );
 
-      //TODO: Traducciones
+
       if ($result === Password::PasswordReset) {
         //status = passwords.reset
-        $message = "Password reset successfully.";
+        $message = itrans('iuser::users.password-reset.status.reset');
       } else {
         //status = passwords.token
-        $message = "Invalid information";
+        $message = itrans('iuser::users.password-reset.status.token');
       }
 
       $response = ['data' => $message];
