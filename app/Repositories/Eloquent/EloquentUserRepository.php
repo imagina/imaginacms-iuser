@@ -13,7 +13,7 @@ class EloquentUserRepository extends EloquentCoreRepository implements UserRepos
      * Filter names to replace
      * @var array
      */
-    protected array $replaceFilters = [];
+    protected array $replaceFilters = ['search'];
 
     /**
      * Relation names to replace
