@@ -5,7 +5,7 @@ return [
     'manage' => [
       'title' => 'iuser::users.manage.title',
       'description' => 'iuser::users.manage.description',
-      'onlyFor' => ['super-admin'],
+      'onlyFor' => [],
       'defaultAccess' => []
     ],
     'index' => [
@@ -17,25 +17,25 @@ return [
     'create' => [
       'title' => 'iuser::users.create.title',
       'description' => 'iuser::users.create.description',
-      'onlyFor' => ['super-admin'],
+      'onlyFor' => [],
       'defaultAccess' => []
     ],
     'edit' => [
       'title' => 'iuser::users.edit.title',
       'description' => 'iuser::users.edit.description',
-      'onlyFor' => ['super-admin'],
+      'onlyFor' => [],
       'defaultAccess' => []
     ],
     'destroy' => [
       'title' => 'iuser::users.destroy.title',
       'description' => 'iuser::users.destroy.description',
-      'onlyFor' => ['super-admin'],
+      'onlyFor' => [],
       'defaultAccess' => []
     ],
     'restore' => [
       'title' => 'iuser::users.restore.title',
       'description' => 'iuser::users.restore.description',
-      'onlyFor' => ['super-admin'],
+      'onlyFor' => [],
       'defaultAccess' => []
     ],
   ],
