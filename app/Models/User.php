@@ -137,6 +137,21 @@ class User extends Authenticatable implements OAuthenticatable
     });
   }
 
+  public function telephone(): Attribute
+  {
+    return Attribute::get(function () {
+      $telephoneField = $this->fields->first(fn($field) => $field->title === 'telephone');
+      if (!$telephoneField || empty($telephoneField->value)) {
+        return null;
+      }
+      try {
+        return  $telephoneField->value;
+      } catch (\Exception $e) {
+        return null;
+      }
+    });
+  }
+
   /**
    * Get Permission from all enable Modules, only true permissions
    */

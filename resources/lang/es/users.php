@@ -10,7 +10,8 @@ return [
     ],
     'validation' => [],
     'fields' => [
-        'age' => 'Edad'
+        'age' => 'Edad',
+        'telephone' => 'Teléfono',
     ],
     'password-reset' => [
         'status' => [
