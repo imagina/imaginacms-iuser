@@ -124,6 +124,7 @@ class User extends Authenticatable implements OAuthenticatable
   public function age(): Attribute
   {
     return Attribute::get(function () {
+      if (!isModuleEnabled('Ifillable')) return null;
       $birthField = $this->fields->first(fn($field) => $field->title === 'birthday');
       if (!$birthField || empty($birthField->value)) {
         return null;
@@ -140,12 +141,13 @@ class User extends Authenticatable implements OAuthenticatable
   public function telephone(): Attribute
   {
     return Attribute::get(function () {
+      if (!isModuleEnabled('Ifillable')) return null;
       $telephoneField = $this->fields->first(fn($field) => $field->title === 'telephone');
       if (!$telephoneField || empty($telephoneField->value)) {
         return null;
       }
       try {
-        return  $telephoneField->value;
+        return $telephoneField->value;
       } catch (\Exception $e) {
         return null;
       }
