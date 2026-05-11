@@ -16,9 +16,7 @@ class CreateRoleRequest extends CoreFormRequest
 
     public function translationRules(): array
     {
-        return [
-            'title' => 'required'
-        ];
+        return [];
     }
 
     public function authorize(): bool
